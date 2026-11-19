@@ -21,3 +21,15 @@ This proves the local committed source reproduces the stated numbers. The fresh 
 ## Remaining external proof
 
 Verify the same commit on GitHub and have the partner follow only its README from a fresh clone. Attach the Week 12 must-fix list and record each item with a file link and pass/fail result. Until those are done, this is a local reproducibility audit, not proof of the GitHub and partner handoff.
+
+## Update 2026-11-19 — mandate switched to Meridian
+
+**Superseded numbers:** the 45/0/55/0, 35/0/65/0, and 75/0/25/0 results above belong to the earlier young-family draft. Project 2 now uses the Lab 13 Meridian mandate only, and `verify_project2.py` reproduces the Meridian evidence instead.
+
+**Local check, 2026-11-19:** in a fresh `.venv` (Python 3.14, `pip install -r requirements.txt`):
+
+- `python verify_project2.py` printed equal weight FAIL (return 5.20% < 6.50%), 60/40 benchmark FAIL (reserve 0% < 3%; 95% loss 10.41% > 10%), constrained 0/20/25/55 PASS (6.51% return, 9.02% 95% loss), every stress row, and the PILOT decision with no reproduction errors.
+- `python -m unittest test_portfolio_engine.py test_lab13_mandate.py test_pit_signal.py`: **9 tests passed**.
+- Streamlit's headless `AppTest` rendered `app.py` with no exceptions, with the loss limit on and off.
+
+**Still not done (needs a person):** push to a GitHub remote, then have a partner follow only the README from a fresh clone and record their result here. This file is a local reproducibility audit, not proof of the partner handoff.

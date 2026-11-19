@@ -46,7 +46,7 @@ def read_vintage(raw: str, vintage_date: str):
 
 def render_signal():
     st.subheader("DGS10 · 10-year Treasury yield")
-    st.write("A dated **rate-context signal** for challenging the Treasury or bond assumption. It is a yield level in percent per year, **not** a bond or ETF total return, and it never enters the optimizer.")
+    st.write("A dated **rate-context signal** for challenging the Treasury or bond assumption. It is a yield level in percent per year, **not** a bond or ETF total return, and it never replaces an asset return. Its one use: the **Challenge** tab's Signal row sets the 10-year sleeve's return estimate to this yield to test the 4.30% training assumption.")
     selected = st.selectbox("Decision-date ALFRED vintage", tuple(VINTAGES), key="dgs10_vintage",
         help="Only two source snapshots are bundled. Each is selected by its exact ALFRED vintage date.")
     raw = VINTAGES[selected].read_text(encoding="utf-8-sig")

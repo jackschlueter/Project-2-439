@@ -2,7 +2,8 @@
 
 import unittest
 
-from lab13_mandate import BENCHMARK, CORR, EQUAL_WEIGHT, mandate_verdict, search, stats
+from lab13_mandate import (BENCHMARK, CORR, EQUAL_WEIGHT, loss95, mandate_verdict, proxy_window,
+                           search, signal_yield, stats)
 
 
 class MeridianKnownAnswers(unittest.TestCase):
@@ -32,6 +33,24 @@ class MeridianKnownAnswers(unittest.TestCase):
         self.assertEqual(mandate_verdict(BENCHMARK, benchmark[0], benchmark[2], .065, .03)[0], "FAIL")
         self.assertIn("Eligible reserve", mandate_verdict(BENCHMARK, benchmark[0], benchmark[2], .065, .03)[1][0])
         self.assertEqual(mandate_verdict(chosen[0], chosen[1], chosen[3], .065, .03)[0], "PASS")
+
+    def test_loss_limit_verdicts_and_stop(self):
+        benchmark = stats(BENCHMARK)
+        chosen = search(loss_limit=.10)
+        self.assertEqual(chosen[0], (0, .20, .25, .55))
+        self.assertAlmostEqual(loss95(chosen[1], chosen[2]), .0902, delta=.0001)
+        self.assertEqual(mandate_verdict(chosen[0], chosen[1], chosen[3], .065, .03, chosen[2], .10)[0], "PASS")
+        verdict, reasons = mandate_verdict(BENCHMARK, benchmark[0], benchmark[2], .065, .03, benchmark[1], .10)
+        self.assertEqual(verdict, "FAIL")
+        self.assertTrue(any("95% one-year loss" in reason for reason in reasons))
+        self.assertIsNone(search(equity_adjustment=-.01, loss_limit=.10))
+        self.assertIsNone(search(target=.07, loss_limit=.10))
+
+    def test_signal_and_window_stresses(self):
+        self.assertEqual(signal_yield()[1], 4.98)
+        self.assertEqual(search(ten_year_return=.0498, loss_limit=.10)[0], (.05, .40, 0, .55))
+        self.assertEqual(proxy_window()[0], (.65, 0, .35))
+        self.assertEqual(proxy_window(36)[0], (.85, 0, .15))
 
 
 if __name__ == "__main__":

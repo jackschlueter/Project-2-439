@@ -1,6 +1,6 @@
 # DGS10 point-in-time signal — data card
 
-**Decision use:** Admit DGS10 only as dated interest-rate context to challenge a Treasury or bond-return assumption. Do not substitute its yield level for SGOV, BND, TIP, or direct Treasury total returns in the optimizer. Quarantine any intraday trading use until release-time evidence is documented.
+**Decision use:** Admit DGS10 only as dated interest-rate context to challenge a Treasury or bond-return assumption. Its only model use is one labeled stress case: the Challenge tab sets the Meridian 10-year sleeve's return estimate to the 2026-10-31 vintage yield (4.98%) to test the 4.30% training assumption. It never replaces an asset's base-case total return. Quarantine any intraday trading use until release-time evidence is documented.
 
 | Field | Record |
 |---|---|

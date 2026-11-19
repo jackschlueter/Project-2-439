@@ -1,28 +1,55 @@
-"""Print the evidence behind the Project 2 committee call from bundled data."""
+"""Print the evidence behind the Meridian Project 2 committee call."""
 
-from pathlib import Path
+from lab13_mandate import (BENCHMARK, CORR, EQUAL_WEIGHT, LOSS_LIMIT, loss95, mandate_verdict,
+                           proxy_window, search, signal_yield, stats, weight_text)
 
-from portfolio_engine import estimate, optimize, read_prices
+HURDLE, RESERVE = .065, .03
+
+
+def show(label, weights, figures):
+    gross, vol, reserve = figures
+    verdict, reasons = mandate_verdict(weights, gross, reserve, HURDLE, RESERVE, vol, LOSS_LIMIT)
+    print(f"{label}: {weight_text(weights)}; return {gross:.2%}; volatility {vol:.2%}; "
+          f"95% loss {loss95(gross, vol):.2%}; eligible reserve {reserve:.0%}; "
+          f"{verdict} ({'; '.join(reasons)})")
+
+
+def check(label, answer, expected):
+    if expected is None:
+        if answer is not None:
+            raise RuntimeError(f"{label}: expected no qualifying mix")
+        print(f"{label}: STOP, no qualifying mix")
+        return
+    if answer is None or answer[0] != expected:
+        raise RuntimeError(f"{label}: saved decision evidence did not reproduce")
+    print(f"{label}: {answer[0]}; return {answer[1]:.2%}; volatility {answer[2]:.2%}; "
+          f"95% loss {loss95(answer[1], answer[2]):.2%}")
 
 
 def main():
-    dates, prices = read_prices(Path(__file__).with_name("prices.csv"))
-    cases = (
-        ("60 months", None, 0, (.45, 0, .55, 0)),
-        ("60 months, VT mean minus 1 point", None, -.01, (.35, 0, .65, 0)),
-        ("last 36 months", 36, 0, (.75, 0, .25, 0)),
-    )
-    for label, window, adjustment, expected in cases:
-        estimates = estimate(dates, prices, window)
-        mix = optimize(estimates, .082, .10, adjustment)
-        if mix is None or mix.weights != expected:
-            raise RuntimeError(f"{label}: saved decision evidence did not reproduce")
-        weights = "/".join(f"{weight:.0%}" for weight in mix.weights)
-        print(f"{label}: SGOV/BND/VT/TIP {weights}; gross {mix.gross_return:.2%}; "
-              f"net after 0.20% costs {mix.gross_return - .002:.2%}; "
-              f"volatility {mix.volatility:.2%}; SGOV reserve {mix.reserve:.0%}")
-    print("Decision: PILOT 45/0/55/0 as a research starting mix; no trade authorization.")
-    print("Adoption gates: approve loss limit and SGOV reserve rule; review forward returns, costs, taxes, and liquidity.")
+    show("Equal weight", EQUAL_WEIGHT, stats(EQUAL_WEIGHT))
+    show("60/40 benchmark", BENCHMARK, stats(BENCHMARK))
+    base = search(HURDLE, RESERVE, loss_limit=LOSS_LIMIT)
+    show("Constrained portfolio", base[0], base[1:])
+    print("\nStress run (proposed 10% loss limit enforced; weights are bills/10-year/IG/equity):")
+    check("Estimate: equity mean -1 pp", search(HURDLE, RESERVE, -.01, loss_limit=LOSS_LIMIT), None)
+    check("Estimate: equity mean -1 pp, no loss limit", search(HURDLE, RESERVE, -.01), (0, .10, .10, .80))
+    corr = CORR.copy()
+    corr[2, 3] = corr[3, 2] = .50
+    check("Estimate: IG-equity correlation 0.50", search(HURDLE, RESERVE, correlation=corr,
+                                                         loss_limit=LOSS_LIMIT), (0, .40, 0, .60))
+    check("Window: 60 months, SGOV/BND/VT stand-ins", proxy_window(None, HURDLE, RESERVE, LOSS_LIMIT), (.65, 0, .35))
+    check("Window: 36 months, SGOV/BND/VT stand-ins", proxy_window(36, HURDLE, RESERVE, LOSS_LIMIT), (.85, 0, .15))
+    check("Costs: +0.50 pp", search(HURDLE + .005, RESERVE, loss_limit=LOSS_LIMIT), None)
+    if search(HURDLE, .40, loss_limit=LOSS_LIMIT) is None or search(HURDLE, .45, loss_limit=LOSS_LIMIT):
+        raise RuntimeError("Constraint breakpoint did not reproduce")
+    print("Constraint: reserve floor 45% is the first infeasible 5% step (breakpoint, not policy)")
+    day, value = signal_yield()
+    check(f"Signal: 10-year estimate = DGS10 {value:.2f}% ({day})",
+          search(HURDLE, RESERVE, loss_limit=LOSS_LIMIT, ten_year_return=value / 100), (.05, .40, 0, .55))
+    print("\nDecision: PILOT the process; no allocation or trade authorization.")
+    print("Stop condition triggered: equity -1 pp and costs +0.50 pp each leave no mix meeting the return, reserve, and loss rules.")
+    print("Adoption gates: committee approves the loss limit; verify liquidity and issuer exposure; replace training estimates with dated forward estimates.")
 
 
 if __name__ == "__main__":
