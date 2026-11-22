@@ -6,6 +6,10 @@
 **Subject:** Recommendation to Pilot Portfolio Selection Process  
 **Decision:** PILOT
 
+**AI Use Disclosure:** I used Claude Code, OpenAI Codex, and ChatGPT to assist with developing and refactoring the Meridian Portfolio Committee application, implementing portfolio optimization and risk calculations, defining the proposed 95% one-year loss measure, building sensitivity tests and historical-window and DGS10 signal analyses, writing tests and validation tools, and drafting project documentation, including the README, decision memo, cold-run instructions, and Edition A materials. AI contributed substantially to the coding and documentation process. I reviewed the outputs, evaluated the financial assumptions, interpreted the results, and take responsibility for the analysis and final investment committee recommendation. The detailed AI-use and validation record is documented in `docs/validation-and-ai-use.md`.
+
+**Education, not investment advice.** This memo and its application are an academic project using course-provided assumptions and illustrative portfolio analysis. The results and recommendations are for educational purposes only and should not be relied upon for actual investment decisions.
+
 ## 1. Executive Recommendation
 
 I recommend that the Meridian Investment Committee **PILOT** the proposed portfolio selection process rather than adopt it for immediate implementation.

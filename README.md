@@ -1,5 +1,9 @@
 # Meridian Portfolio Committee — Python web app
 
+**AI Use Disclosure:** I used Claude Code, OpenAI Codex, and ChatGPT to assist with developing and refactoring the Meridian Portfolio Committee application, implementing portfolio optimization and risk calculations, defining the proposed 95% one-year loss measure, building sensitivity tests and historical-window and DGS10 signal analyses, writing tests and validation tools, and drafting project documentation, including the README, decision memo, cold-run instructions, and Edition A materials. AI contributed substantially to the coding and documentation process. I reviewed the outputs, evaluated the financial assumptions, interpreted the results, and take responsibility for the analysis and final investment committee recommendation. The detailed AI-use and validation record is documented in `docs/validation-and-ai-use.md`.
+
+**Education, not investment advice.** This application is an academic project using course-provided assumptions and illustrative portfolio analysis. Its results and recommendations are for educational purposes only and should not be relied upon for actual investment decisions.
+
 A Streamlit investment management app for the **Meridian Foundation Reserve mandate from Lab 13**. It shows the mandate, compares two transparent baselines with a constrained portfolio, checks each against the mandate, stress-tests the result, uses a point-in-time rate signal, and turns a target into a rebalance worksheet. The committee recommendation is **PILOT**. The app does not place trades.
 
 ## The recommendation: PILOT
@@ -101,5 +105,6 @@ The bundled signal uses the exact **2026-10-31 ALFRED vintage**. Its latest nonm
 - `mandate-source.md` — earlier young-family draft (not this recommendation); kept for the ETF price provenance.
 - `docs/decision-memo.md` — committee decision memo.
 - `single_file/app.py` — the whole app in one file, with the data built in. Runs alone: `pip install numpy pandas streamlit`, then `python -m streamlit run app.py`. Regenerate after code changes with `python single_file/build.py`.
-- `records/` — cold-run audit, locked changed-input record, Edition A, and AI-use log.
+- `docs/validation-and-ai-use.md` — validation checks and AI-use log.
+- `records/` — cold-run audit, locked changed-input record, Lab 20 pre-run prediction, and Edition A.
 - `requirements.txt` — Python dependencies.

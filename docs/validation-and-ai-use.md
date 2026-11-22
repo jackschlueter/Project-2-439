@@ -1,4 +1,16 @@
-# Project 2 AI-use log
+# Validation and AI-use record
+
+## Validation
+
+Run from the app folder after `pip install -r requirements.txt`:
+
+- `python verify_project2.py` reproduces every figure behind the decision (baselines, verdicts, each stress, the signal case) and stops with an error if any saved number changes.
+- `python -m unittest -v test_portfolio_engine.py test_lab13_mandate.py test_pit_signal.py` runs 9 known-answer tests, including the Lab 13 Meridian answer (0/20/25/55, 6.51%, 9.44%), the loss-limit verdicts, and the DGS10 vintage gate.
+- `records/project2_cold_run_2026-11-17.md` records clean-folder runs. A partner cold run from the GitHub clone is still pending.
+- `single_file/app.py` was rendered alone, with no other project files beside it, and matched the main app's figures.
+- `records/lab20_pre_run_prediction.md` is the AI-off prediction, committed to GitHub before the equity 7.25% run.
+
+## AI-use log
 
 Entries before 2026-11-19 (the 2026-11-16/17 app build, cold-run audit, and locked changed-input record) are in this repository's git history and `records/`; add reviews for them if your course requires it.
 
