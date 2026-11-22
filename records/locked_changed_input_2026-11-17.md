@@ -1,5 +1,7 @@
 # Locked Changed-Input Record — Meridian equity return estimate
 
+> **SUPERSEDED (2026-11-22).** This test was replaced by Jack's own AI-off prediction, `lab20_pre_run_prediction.md` (commit `723d43d`), and run in `lab20_run_result.md`. The Lab 20 run held the proposed 10% loss limit on, which this 2026-11-17 record predates. The case this record specifies (equity 7.25%, no loss limit) appears in `lab20_run_result.md` as the "loss limit off" comparison row: 0 / 10 / 20 / 70, 6.50% return, 11.57% volatility. The prediction below was not run on its own.
+
 **Locked at:** 2026-11-17 21:41:55 UTC  
 **Status:** Input and expectation recorded before the changed-input run. Do not execute the 7.25% case until this file is committed to GitHub and the remote commit is verified.  
 **Purpose:** Test whether a modest equity-return estimate cut changes the lowest-volatility qualifying mix under the Lab 13 Meridian mandate.

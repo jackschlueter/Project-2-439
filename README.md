@@ -1,6 +1,6 @@
 # Meridian Portfolio Committee — Python web app
 
-**AI Use Disclosure:** I used Claude Code, OpenAI Codex, and ChatGPT to assist with developing and refactoring the Meridian Portfolio Committee application, implementing portfolio optimization and risk calculations, defining the proposed 95% one-year loss measure, building sensitivity tests and historical-window and DGS10 signal analyses, writing tests and validation tools, and drafting project documentation, including the README, decision memo, cold-run instructions, and Edition A materials. AI contributed substantially to the coding and documentation process. I reviewed the outputs, evaluated the financial assumptions, interpreted the results, and take responsibility for the analysis and final investment committee recommendation. The detailed AI-use and validation record is documented in `docs/validation-and-ai-use.md`.
+**AI Use Disclosure:** I used Claude Code, OpenAI Codex, and ChatGPT to assist with developing and refactoring the Meridian Portfolio Committee application, implementing portfolio optimization and risk calculations, defining the proposed 95% one-year loss measure, building sensitivity tests and historical-window and DGS10 signal analyses, writing tests and validation tools, and drafting project documentation, including the README, decision memo, and cold-run instructions. AI contributed substantially to the coding and documentation process. I reviewed the outputs, evaluated the financial assumptions, interpreted the results, and take responsibility for the analysis and final investment committee recommendation. The detailed AI-use and validation record is documented in `docs/validation-and-ai-use.md`.
 
 **Education, not investment advice.** This application is an academic project using course-provided assumptions and illustrative portfolio analysis. Its results and recommendations are for educational purposes only and should not be relied upon for actual investment decisions.
 
@@ -109,9 +109,10 @@ The bundled signal uses the exact **2026-10-31 ALFRED vintage**. Its latest nonm
 - `portfolio_engine.py` — price reader and rebalance math.
 - `prices.csv`, `build_prices.py`, `source/` — ETF adjusted closes used for the window stress, the builder, and the saved raw Yahoo responses.
 - `lab13-source.md`, `meridian-ips-source.md` — Lab 13 case and IPS source records.
-- `mandate-source.md` — earlier young-family draft (not this recommendation); kept for the ETF price provenance.
+- `mandate-source.md` — **old young-family draft, not this project's mandate**; kept only for the ETF price sources and download dates.
 - `docs/decision-memo.md` — committee decision memo.
-- `single_file/app.py` — the whole app in one file, with the data built in. Runs alone: `pip install numpy pandas streamlit`, then `python -m streamlit run app.py`. Regenerate after code changes with `python single_file/build.py`.
+- `single_file/` — `app.py` is the whole app in one file, with the data built in. Runs alone: `pip install numpy pandas streamlit`, then `python -m streamlit run app.py`. Regenerate after code changes with `python single_file/build.py`.
 - `docs/validation-and-ai-use.md` — validation checks and AI-use log.
-- `records/` — cold-run audit, locked changed-input record, Lab 20 pre-run prediction, and Edition A.
+- `records/` — partner cold-run record; Lab 20 pre-run prediction, baseline and after outputs, and run result; the superseded 2026-11-17 locked changed-input record; Edition A draft.
+- `reference/` — copies of the earlier Lab 13–15 work this app was built from. Not used by the app.
 - `requirements.txt` — Python dependencies.

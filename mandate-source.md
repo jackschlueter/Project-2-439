@@ -1,5 +1,7 @@
 # Project 2 mandate — proposed young-family client
 
+> **OLD DRAFT — NOT THIS PROJECT'S MANDATE.** Project 2 uses the Lab 13 Meridian Foundation Reserve mandate (see `README.md` and `meridian-ips-source.md`). This young-family draft is kept only because its price-source table documents the SGOV/BND/VT/TIP adjusted closes in `prices.csv`, which the app uses for the window stress. Its numbers (45/0/55/0, 8.2% hurdle, SGOV floor) are not part of the recommendation.
+
 This is a **fictional draft**, not information supplied by an actual couple. Client details, the return goal, the reserve floor, and risk tolerance require confirmation before any investment decision.
 
 ## Client, objective, and hard constraint
