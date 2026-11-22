@@ -1,0 +1,8 @@
+# Lab 20 after output (equity expected return 8.00% -> 7.25%, nothing else changed)
+# Saved 2026-11-22 17:31:48 -0500 from commit f1eb80e; loss limit 10% on.
+
+Old mix at equity 7.25%: Treasury bills 0% / Treasury 10-year 20% / IG bonds 25% / Global equity 55%; return 6.10%; volatility 9.44%; 95% loss 9.43%; eligible reserve 20%; FAIL (Return proxy 6.10% below 6.50% gross hurdle)
+Call: search(target=.065, reserve_floor=.03, equity_adjustment=-.0075, loss_limit=.10)
+Re-optimized, loss limit on: STOP - no qualifying 5% grid mix
+Re-optimized, loss limit off (comparison): Treasury bills 0% / Treasury 10-year 10% / IG bonds 20% / Global equity 70%; return 6.50%; volatility 11.57%; 95% loss 12.53%; eligible reserve 10%; FAIL (95% one-year loss 12.53% above 10% limit)
+Decision: PILOT (unchanged). Stop condition triggered: no mix meets the return, reserve, and loss rules.

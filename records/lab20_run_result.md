@@ -4,6 +4,7 @@
 **Run date:** November 22, 2026  
 **Prediction:** [`lab20_pre_run_prediction.md`](lab20_pre_run_prediction.md), committed and pushed to GitHub in commit `723d43d` (2026-11-22 17:14:32 −0500) before this run  
 **Baseline output:** [`lab20_baseline_output.txt`](lab20_baseline_output.txt), saved before the change  
+**After output:** [`lab20_after_output.txt`](lab20_after_output.txt), saved after the change; every figure below comes from these two files  
 **Run by:** Claude Code, at Jack's instruction, after the prediction was on GitHub (pushed through commit `afb99de`)
 
 ## What changed
@@ -19,7 +20,7 @@ Only global equity's expected annual return: **8.00% → 7.25%** (−0.75 percen
 | Baseline (equity 8.00%) | 0 / 20 / 25 / 55 | 6.51% | 9.44% | 9.02% | PASS |
 | Old mix at equity 7.25% | 0 / 20 / 25 / 55 | 6.10% | 9.44% | 9.43% | FAIL: return 6.10% < 6.50% |
 | **Re-optimized, loss limit on** | **No qualifying mix** | — | — | — | **FAIL → STOP** |
-| Re-optimized, loss limit off (for comparison) | 0 / 10 / 20 / 70 | 6.51% | 11.57% | 12.53% | FAIL: loss 12.53% > 10% |
+| Re-optimized, loss limit off (for comparison) | 0 / 10 / 20 / 70 | 6.50% | 11.57% | 12.53% | FAIL: loss 12.53% > 10% |
 
 ## Prediction vs. result
 
