@@ -33,3 +33,34 @@ Verify the same commit on GitHub and have the partner follow only its README fro
 - Streamlit's headless `AppTest` rendered `app.py` with no exceptions, with the loss limit on and off.
 
 **Still not done (needs a person):** push to a GitHub remote, then have a partner follow only the README from a fresh clone and record their result here. This file is a local reproducibility audit, not proof of the partner handoff.
+
+## Partner cold run — 2026-11-22 (partner: OpenAI Codex)
+
+**Partner:** OpenAI Codex, not a classmate. Jack could not arrange a human partner before the due date and accepts that this may not earn full credit. Codex had no prior access to the project; it received only the repo link and an instruction to follow only the README and change nothing.
+
+**Instructions given:** clone `https://github.com/jackschlueter/Project-2-439` into an empty folder; follow only `README.md`; set up the environment, run `python verify_project2.py`, run the README's unittest command, start the app; report each command, the first failure, elapsed time, where the result is, and the environment.
+
+### Run 1 — commit `767c5a9`
+
+- **First failure:** `git clone` → `fatal: unable to access 'https://github.com/jackschlueter/Project-2-439.git/': Could not resolve host: github.com`. Cause: Codex's sandbox blocked network access, not the README. Codex retried with network permission.
+- **Second sandbox failure:** the first `streamlit run` failed at `sock.bind((address, port))` with `PermissionError: [Errno 1] Operation not permitted`; a permission retry started the server. Because of these retries, this was not a strict stop-at-first-failure run.
+- **Elapsed time:** about 47 minutes from first clone attempt to server startup, mostly permission waits.
+- **Result:** `Decision: PILOT the process; no allocation or trade authorization.` All 9 tests passed. Streamlit started at `http://localhost:8501`.
+- **Environment:** macOS (Darwin), Python 3.14.7.
+- **README gap found:** Streamlit's first-run email prompt was not mentioned (Codex left it blank). Also noted on review: the README never said to `cd` into the cloned folder.
+
+**Fix:** commit `7cf29ec` added `git clone` and `cd Project-2-439` steps (plus a no-git Download ZIP route) and a note that the email prompt is optional (press Enter). Pushed to GitHub before Run 2.
+
+### Run 2 — rerun after the fix (GitHub `main` was `7cf29ec`)
+
+- **First failure:** again the sandbox: `git clone` → `Could not resolve host: github.com`. The first `pip install` was also blocked from reaching PyPI, and the first `streamlit run` hit the same port `PermissionError`. Each succeeded on a permission retry. **No project-command failure.**
+- **Elapsed time:** about 6 minutes 37 seconds from first clone attempt to server startup, including permission waits.
+- **Result:** `Decision: PILOT the process; no allocation or trade authorization.` All 9 tests passed. Streamlit printed `Local URL: http://localhost:8501`. Codex could not open a browser, so it confirmed server startup, not a rendered page.
+- **Environment:** macOS (Darwin), Python 3.14.7.
+- **README clarity:** nothing unclear or missing affected this run.
+
+**Gaps in the partner reports:** Codex described the commands but did not list them verbatim in either run, and did not print the tested commit hash. `7cf29ec` was the only commit on GitHub `main` between the fix and Run 2.
+
+**Rendered-page check:** the app's own committee-memo download (`meridian_committee_memo.txt`, exported by Jack from the running app on 2026-11-22) matches the default figures: PILOT; 0/20/25/55 PASS; 60/40 benchmark FAIL (0% reserve, 10.41% loss); equity −1 pp and costs +0.50 pp → STOP.
+
+**Conclusion:** a fresh clone, following only the README, reaches the PILOT decision, 9 passing tests, and a running app. The one README gap found in Run 1 was fixed and the rerun passed.
