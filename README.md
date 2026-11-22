@@ -16,7 +16,14 @@ Choices were adopt, allocate to, rebalance, pilot, or reject. The call is **pilo
 
 ## Reach the decision from this folder
 
-Use Python 3.12 or later and run:
+Use Python 3.12 or later. Get the code and move into its folder:
+
+```bash
+git clone https://github.com/jackschlueter/Project-2-439.git
+cd Project-2-439
+```
+
+(Without git: on the GitHub page click **Code → Download ZIP**, unzip it, and open a terminal in the unzipped folder.) Then run:
 
 ```bash
 python3 -m venv .venv
@@ -35,7 +42,7 @@ source .venv/bin/activate
 python -m streamlit run app.py
 ```
 
-Open the **Local URL** Streamlit prints, usually `http://localhost:8501`. Stop the server with Ctrl+C. No API key, account, or network access is needed after installation.
+The first time Streamlit runs, it may ask for an email address in the terminal. It is optional: press **Enter** to skip. Then open the **Local URL** Streamlit prints, usually `http://localhost:8501`. Stop the server with Ctrl+C. No API key, account, or network access is needed after installation.
 
 ## Operate it
 
