@@ -1,0 +1,20 @@
+# Lab 20 baseline output (before the equity 7.25% run)
+# Saved 2026-11-22 17:28:12 -0500 from commit f7acad9; equity expected return 8.00%, loss limit 10% on.
+
+Equal weight: Treasury bills 25% / Treasury 10-year 25% / IG bonds 25% / Global equity 25%; return 5.20%; volatility 5.21%; 95% loss 3.38%; eligible reserve 50%; FAIL (Return proxy 5.20% below 6.50% gross hurdle)
+60/40 benchmark: Treasury bills 0% / Treasury 10-year 0% / IG bonds 40% / Global equity 60%; return 6.80%; volatility 10.46%; 95% loss 10.41%; eligible reserve 0%; FAIL (Eligible reserve 0% below 3% floor; 95% one-year loss 10.41% above 10% limit)
+Constrained portfolio: Treasury bills 0% / Treasury 10-year 20% / IG bonds 25% / Global equity 55%; return 6.51%; volatility 9.44%; 95% loss 9.02%; eligible reserve 20%; PASS (Checked return, reserve, weight, and 95% loss rules)
+
+Stress run (proposed 10% loss limit enforced; weights are bills/10-year/IG/equity):
+Estimate: equity mean -1 pp: STOP, no qualifying mix
+Estimate: equity mean -1 pp, no loss limit: (0.0, 0.1, 0.1, 0.8); return 6.53%; volatility 12.94%; 95% loss 14.75%
+Estimate: IG-equity correlation 0.50: (0.0, 0.4, 0.0, 0.6); return 6.52%; volatility 9.73%; 95% loss 9.48%
+Window: 60 months, SGOV/BND/VT stand-ins: (0.65, 0.0, 0.35); return 6.58%; volatility 5.29%; 95% loss 2.13%
+Window: 36 months, SGOV/BND/VT stand-ins: (0.85, 0.0, 0.15); return 6.81%; volatility 1.79%; 95% loss -3.87%
+Costs: +0.50 pp: STOP, no qualifying mix
+Constraint: reserve floor 45% is the first infeasible 5% step (breakpoint, not policy)
+Signal: 10-year estimate = DGS10 4.98% (2026-10-29): (0.05, 0.4, 0.0, 0.55); return 6.57%; volatility 8.96%; 95% loss 8.18%
+
+Decision: PILOT the process; no allocation or trade authorization.
+Stop condition triggered: equity -1 pp and costs +0.50 pp each leave no mix meeting the return, reserve, and loss rules.
+Adoption gates: committee approves the loss limit; verify liquidity and issuer exposure; replace training estimates with dated forward estimates.
