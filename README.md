@@ -99,5 +99,6 @@ The bundled signal uses the exact **2026-10-31 ALFRED vintage**. Its latest nonm
 - `prices.csv`, `build_prices.py`, `source/` — ETF adjusted closes used for the window stress, the builder, and the saved raw Yahoo responses.
 - `lab13-source.md`, `meridian-ips-source.md` — Lab 13 case and IPS source records.
 - `mandate-source.md` — earlier young-family draft (not this recommendation); kept for the ETF price provenance.
+- `docs/decision-memo.md` — committee decision memo.
 - `records/` — cold-run audit, locked changed-input record, Edition A, and AI-use log.
 - `requirements.txt` — Python dependencies.
