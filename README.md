@@ -100,5 +100,6 @@ The bundled signal uses the exact **2026-10-31 ALFRED vintage**. Its latest nonm
 - `lab13-source.md`, `meridian-ips-source.md` — Lab 13 case and IPS source records.
 - `mandate-source.md` — earlier young-family draft (not this recommendation); kept for the ETF price provenance.
 - `docs/decision-memo.md` — committee decision memo.
+- `single_file/app.py` — the whole app in one file, with the data built in. Runs alone: `pip install numpy pandas streamlit`, then `python -m streamlit run app.py`. Regenerate after code changes with `python single_file/build.py`.
 - `records/` — cold-run audit, locked changed-input record, Edition A, and AI-use log.
 - `requirements.txt` — Python dependencies.
