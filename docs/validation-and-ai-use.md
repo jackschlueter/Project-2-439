@@ -1,5 +1,15 @@
 # Validation and AI-use record
 
+## Sources and as-of boundary
+
+| Input | Source | As-of / download date |
+|---|---|---|
+| Sleeve returns, volatilities, correlations, Meridian mandate | Course-authored Lab 13 training values ([`lab13-source.md`](../lab13-source.md)) and Meridian IPS S1–S10 ([`meridian-ips-source.md`](../meridian-ips-source.md)) | Course material; training values, not market estimates |
+| DGS10 10-year Treasury yield (signal stress only) | Federal Reserve H.15 via ALFRED vintages, saved as `dgs10_2026-10-31.csv` and `dgs10_2026-11-03.csv` ([data card](../dgs10-data-card.md)) | Decision vintage 2026-10-31 (latest observation 2026-10-29, 4.98%); downloaded 2026-11-17 |
+| SGOV / BND / VT / TIP adjusted closes (window stress only) | Yahoo Finance chart responses in `source/`, built into `prices.csv` by `build_prices.py` ([price-source table](../mandate-source.md)) | Monthly, September 2021–September 2026; downloaded 2026-10-20 (TIP 2026-10-22); incomplete October 2026 excluded |
+
+**Boundary:** the decision uses nothing dated after the 2026-10-31 DGS10 vintage and the September 2026 month-end prices. The app excludes DGS10 observations after the selected vintage date.
+
 ## Validation
 
 Run from the app folder after `pip install -r requirements.txt`:
@@ -9,6 +19,18 @@ Run from the app folder after `pip install -r requirements.txt`:
 - `records/project2_cold_run_2026-11-17.md` records clean-folder runs and the partner cold run from a fresh GitHub clone (2026-11-22, partner: OpenAI Codex, not a classmate). Run 1 reached PILOT with all 9 tests passing and the app running; it found one README gap (no `cd` step, and no mention of Streamlit's optional email prompt), fixed in commit `7cf29ec`. The rerun after the fix had no project-command failures.
 - `single_file/app.py` was rendered alone, with no other project files beside it, and matched the main app's figures.
 - The changed-input test is in the Locked Changed-Input Record below.
+- **Saved executed output (2026-11-23):** [`records/verify_output.txt`](../records/verify_output.txt) (verifier: baselines, stresses, signal case, PILOT decision) and [`records/unittest_output.txt`](../records/unittest_output.txt) (9 tests, all OK).
+
+## Limitations
+
+- Sleeve returns, volatilities, and correlations are course training values, not validated market estimates.
+- The 95% one-year loss measure assumes normally distributed returns, so it understates extreme-loss risk.
+- The 10% loss limit and the minimum-volatility objective are analyst proposals, not approved policy.
+- The result is single-period; it cannot show whether the process meets CPI + 4% over rolling five-year periods.
+- Issuer concentration, five-day liquidity, and turnover rules are not fully tested.
+- The window stress uses SGOV/BND/VT as stand-ins for bills/IG/equity; there is no 10-year Treasury sleeve history.
+- The DGS10 signal is a yield level used for one labeled stress, not a return forecast; its intraday release timing is unverified.
+- The partner cold run was done by OpenAI Codex, not a classmate, and it confirmed server startup, not a rendered page.
 
 ## Locked Changed-Input Record
 

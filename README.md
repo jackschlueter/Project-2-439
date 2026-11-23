@@ -124,6 +124,6 @@ The bundled signal uses the exact **2026-10-31 ALFRED vintage**. Its latest nonm
 - `single_file/` — `app.py` is the whole app in one file, with the data built in. Runs alone: `pip install numpy pandas streamlit`, then `python -m streamlit run app.py`. Regenerate after code changes with `python single_file/build.py`.
 - `docs/validation-and-ai-use.md` — validation checks and AI-use log.
 - `docs/submission-manifest.md` — Brightspace submission manifest: GitHub links for every location and YouTube links for the videos.
-- `records/` — partner cold-run record; Lab 20 pre-run prediction, baseline and after outputs, and run result; the superseded 2026-11-17 locked changed-input record; Edition A draft.
+- `records/` — saved verifier and test output (`verify_output.txt`, `unittest_output.txt`); partner cold-run record; Lab 20 pre-run prediction, baseline and after outputs, and run result; the superseded 2026-11-17 locked changed-input record; Edition A draft.
 - `reference/` — copies of the earlier Lab 13–15 work this app was built from. Not used by the app.
 - `requirements.txt` — Python dependencies.

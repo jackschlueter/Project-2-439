@@ -32,3 +32,23 @@ Access: Videos 1, 2 and 3 are unlisted on YouTube and play without signing in (c
 | Records (cold run, Lab 20) | https://github.com/jackschlueter/Project-2-439/tree/main/records |
 | Single-file app | https://github.com/jackschlueter/Project-2-439/tree/main/single_file |
 | Earlier Lab 13–15 work | https://github.com/jackschlueter/Project-2-439/tree/main/reference |
+
+## Frozen-file checklist
+
+Every file below is committed on `main` at https://github.com/jackschlueter/Project-2-439.
+
+| File | Purpose | In repo |
+|---|---|---|
+| `README.md` | Opening AI and education statements, run instructions, recommendation | ✅ |
+| `requirements.txt` | Dependencies | ✅ |
+| `app.py`, `portfolio_engine.py`, `lab13_mandate.py`, `pit_signal.py`, `build_prices.py` | Runnable source | ✅ |
+| `verify_project2.py`, `test_*.py` | Verifier and 9 known-answer tests | ✅ |
+| `prices.csv`, `source/*.json`, `dgs10_2026-10-31.csv`, `dgs10_2026-11-03.csv` | Bundled input data | ✅ |
+| `records/verify_output.txt`, `records/unittest_output.txt` | Visible executed output (2026-11-23) | ✅ |
+| `docs/decision-memo.md` | Decision memo (attach to Brightspace) | ✅ |
+| `docs/validation-and-ai-use.md` | Sources, tests, limitations, AI-use log, Locked Changed-Input Record (attach to Brightspace) | ✅ |
+| `records/lab20_pre_run_prediction.md` | AI-off prediction, locked in commit `723d43d` before the run | ✅ |
+| `records/lab20_run_result.md`, `records/lab20_baseline_output.txt`, `records/lab20_after_output.txt` | Changed-input run and outputs | ✅ |
+| `records/project2_cold_run_2026-11-17.md` | Partner cold run | ✅ |
+| `transcript-video-1.txt`, `transcript-video-2.txt`, `transcript-video-3.txt` | Video transcripts | Pending |
+| `.env.example` | Not needed: the app uses no API keys or secrets | — |
