@@ -1,0 +1,18 @@
+439 project 2 Video 2 — code walkthrough (3:35)
+https://youtu.be/9S-74I0AMUI
+Speaker: Jack Schlueter. Auto-generated transcript, unedited.
+
+[0:00] Okay, so AI disclosure, I use Cloud Code, Open AI Codex, and ChatGPT to help this project, the analysis and decision of mine, and this is education, not investment advice. So this is the code that produces my decision number, and I'll walk through the file. So at the top, we have the inputs.
+[0:32] mean, volatility, and correlation with the Lab 13 course training values, expected returns for bills, 10-year treasuries, investment grade bonds, global equity, the volatilities, and the correlation matrix.
+[0:49] So eligibility marks bills in the 10 year as reserve eligible. These are training values dot market estimates.
+[1:04] Okay, so the stats function terms weight in the numbers, expected return is the weight times the means, and volatility is the square root of the weight times the covariance matrix times the weights. And the covariance matrix is volatility times volatility times correlation. So the correlation terms matter, leave them not give us the wrong answer. And the third output is the reserve, which is the weights times eligible.
+[1:34] So loss 95 is my proposed risk measure, 1.645 times volatility minus return. That's the one year loss exceeded about 5% of the time, assuming normal returns.
+[1:45] So here we have search. This is the decision engine. It looks for the lowest volatility, long only mix on a 5% grid. The loop runs A, B, and C from 0 to 20. D is 20 minus the other three.
+[2:04] So the weights always sum to 100%. Each weight is divided by 20.
+[2:09] For each mix, it computes return, volatility, and reserve, and then skips it if the return is below the target and the reserve is below the floor, or if the loss limit is set, the loss is above the limit. Among the survivors, it keeps them with the lowest volatility, and if nothing survives, it returns nothing. And that's my stop condition. So 2 questions I would expect is why minimum volatility?
+[2:30] The IPS says the CIO must choose what the power optimizes. This is my analyst's choice, not policy. And then what's the one, E minus 12, just a small tolerance for floating point error. So a mix sitting exactly at the hurdle isn't rejected by rounding.
+[2:44] I want to go to the...
+[2:48] The mandate verdict, this checks the return reserve weights and loss limit and returns pass or fail with the rule it failed. So next I'll show.
+[2:58] Result, if we go over here.
+[3:02] So the print, or this prints both baselines and my constrained portfolio with their verdicts, equal weight fails on return, the 60-40 benchmark fails on reserve and loss, and my constrained mix, 0, 20, 25, 55 passes. Then it prints the stress rows and ends the decision.
+[3:21] pilot process, no allocation authorization, and the verifier stops an error if any saved number changes. And that is my code behind the decision.

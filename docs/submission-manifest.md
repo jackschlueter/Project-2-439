@@ -9,8 +9,21 @@ Repository: https://github.com/jackschlueter/Project-2-439
 | Video | Title | Length | Link | Transcript |
 |---|---|---|---|---|
 | Video 1 | 439 project 2 Video 1 | 2:30 | https://youtu.be/70vq2xUNwTE | Pending |
-| Video 2 | 439 project 2 Video 2 | 3:35 | https://youtu.be/9S-74I0AMUI | Pending |
+| Video 2 | 439 project 2 Video 2 | 3:35 | https://youtu.be/9S-74I0AMUI | [transcript-video-2.txt](https://github.com/jackschlueter/Project-2-439/blob/main/transcript-video-2.txt) |
 | Video 3 | 439 project 2 Video 3 | 3:03 | https://youtu.be/LpSa7-WsUW0 | [transcript-video-3.txt](https://github.com/jackschlueter/Project-2-439/blob/main/transcript-video-3.txt) |
+
+### Video 2 timestamps
+
+| Time | Section |
+|---|---|
+| 0:00 | AI announcement; education, not investment advice |
+| 0:32 | Inputs: Lab 13 means, volatilities, correlations; reserve eligibility |
+| 1:04 | `stats`: return, volatility, reserve |
+| 1:34 | `loss95` risk measure |
+| 1:45 | `search`: 5% grid, minimum-volatility mix, stop condition |
+| 2:30 | Why minimum volatility; the 1e-12 tolerance |
+| 2:48 | Mandate verdict |
+| 3:02 | Verifier output and the PILOT decision |
 
 ### Video 3 timestamps
 
@@ -64,6 +77,6 @@ Every file below is committed on `main` at https://github.com/jackschlueter/Proj
 | `records/lab20_pre_run_prediction.md` | AI-off prediction, locked in commit `723d43d` before the run | ✅ |
 | `records/lab20_run_result.md`, `records/lab20_baseline_output.txt`, `records/lab20_after_output.txt` | Changed-input run and outputs | ✅ |
 | `records/project2_cold_run_2026-11-17.md` | Partner cold run | ✅ |
-| `transcript-video-3.txt` | Video 3 transcript | ✅ |
-| `transcript-video-1.txt`, `transcript-video-2.txt` | Video 1 and 2 transcripts | Pending |
+| `transcript-video-2.txt`, `transcript-video-3.txt` | Video 2 and 3 transcripts | ✅ |
+| `transcript-video-1.txt` | Video 1 transcript | Pending |
 | `.env.example` | Not needed: the app uses no API keys or secrets | — |
