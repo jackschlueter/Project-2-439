@@ -13,6 +13,8 @@ Choices were adopt, allocate to, rebalance, pilot, or reject. The call is **pilo
 - **Why not reject:** the constrained portfolio passes every checked rule: 6.51% return proxy, 20% eligible reserve, 9.02% modeled 95% one-year loss. Both baselines fail at least one rule. The process does what the mandate asks.
 - **Why not adopt or allocate:** the mix clears the 6.5% hurdle by only 0.01 points. Under the proposed 10% loss limit, a one-point cut in the equity estimate **or** 0.50 points of extra cost leaves **no mix that passes**, so the stop condition fires under modest stress. The loss limit is the analyst's proposal, not yet committee policy. Issuer concentration and five-day liquidity are not verified. All return inputs are course training values.
 - **What would change the call to adopt:** the committee approves a loss measure and limit (or a lower return target), operations verifies liquidity and issuer exposure, and dated forward-looking estimates replace the training values.
+- **What would change the call to reject:** realistic, validated assumptions repeatedly trigger the stop condition, or the process cannot meet the liquidity requirements.
+- **Committee ask:** approve the pilot as a research process with no capital allocation, and take on the three adoption conditions above.
 
 ## Videos
 

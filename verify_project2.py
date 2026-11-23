@@ -1,6 +1,6 @@
 """Print the evidence behind the Meridian Project 2 committee call."""
 
-from lab13_mandate import (BENCHMARK, CORR, EQUAL_WEIGHT, LOSS_LIMIT, loss95, mandate_verdict,
+from lab13_mandate import (BENCHMARK, CORR, EQUAL_WEIGHT, LOSS_LIMIT, MEANS, VOL, loss95, mandate_verdict,
                            proxy_window, search, signal_yield, stats, weight_text)
 
 HURDLE, RESERVE = .065, .03
@@ -27,6 +27,12 @@ def check(label, answer, expected):
 
 
 def main():
+    print("Inputs (Lab 13 course training values, not market estimates; sleeves bills/10-year/IG/equity):")
+    print(f"  Expected returns {' / '.join(f'{m:.2%}' for m in MEANS)}; volatilities {' / '.join(f'{v:.2%}' for v in VOL)}")
+    print(f"  Correlations: 10-year/IG {CORR[1, 2]:.2f}, IG/equity {CORR[2, 3]:.2f}, 10-year/equity {CORR[1, 3]:.2f}, bills/10-year {CORR[0, 1]:.2f}")
+    print(f"  Mandate: {HURDLE:.1%} gross return hurdle (2.5% CPI + 4.0 pp); {RESERVE:.0%} eligible reserve floor (bills and 10-year only); "
+          f"proposed {LOSS_LIMIT:.0%} 95% one-year loss limit; long-only 5% grid")
+    print("As of: DGS10 ALFRED vintage 2026-10-31 (signal stress); SGOV/BND/VT month-end prices Sep 2021-Sep 2026 (window stress)\n")
     show("Equal weight", EQUAL_WEIGHT, stats(EQUAL_WEIGHT))
     show("60/40 benchmark", BENCHMARK, stats(BENCHMARK))
     base = search(HURDLE, RESERVE, loss_limit=LOSS_LIMIT)
@@ -50,6 +56,8 @@ def main():
     print("\nDecision: PILOT the process; no allocation or trade authorization.")
     print("Stop condition triggered: equity -1 pp and costs +0.50 pp each leave no mix meeting the return, reserve, and loss rules.")
     print("Adoption gates: committee approves the loss limit; verify liquidity and issuer exposure; replace training estimates with dated forward estimates.")
+    print("Reject if: realistic validated assumptions repeatedly trigger the stop condition, or liquidity requirements cannot be met.")
+    print("Committee ask: approve the pilot as a research process with no capital allocation, and take on the three adoption gates.")
 
 
 if __name__ == "__main__":
