@@ -1,0 +1,18 @@
+439 project 2 Video 3 — committee presentation (3:03)
+https://youtu.be/LpSa7-WsUW0
+Speaker: Jack Schlueter. Auto-generated transcript, unedited.
+
+[0:00] Okay, so I use Cloud Code, OpenAI Codex, and chat to help build this project. The analysis in this is your mind is education, not investment advice. So this is the app running live. These are the Meridian Foundation reserve numbers on the decision tab.
+[0:28] Um, equal weight fails.
+[0:31] With A 5.20% return below a 6.5% hurdle, 60-40 benchmark fails, hold 0% in eligible reserves.
+[0:44] And it's loss is 10.4% above the 10% limit. So my constrained portfolio passes every rule. Then if we move the estimate down by 1%.
+[0:57] Here.
+[1:03] So, what happens is I cut the equity return asset by one point.
+[1:10] My recommendation is that we pilot this process with no allocation or trade authorization. That will be 0% bills, 20% ten-year treasuries.
+[1:19] 25% investment grade bonds, 55% global equity as a research starting mix.
+[1:25] And then why this mix specifically? It passes a rule. I checked with 6.51% return, 20% eligible reserve, and a 9.02% modeled loss that clears the return hurdle by only 0.01 points.
+[1:41] Why not adopt or allocate because it breaks under modest stress? At one point, cut to the equity estimate or half a point of extra cost leaves no mix that passes, and I'll have 20 tests.
+[1:54] Cutting equity from 8, 7.25% triggered the stop without the loss limit.
+[2:03] the cheapest way back to the hurdle of 7% equity with a 12.5% loss. The window stress moved the next 20 points between 60 and 36 months using the current 10 year yield, moved 20 points into the 10 year sleeve. Why not reject? Because the process did its job.
+[2:21] I found a mix that satisfies the mandate when one exists, and it stops instead of forcing an answer when none did. Now, the risks are real. The 10% loss limit is my proposal, not committee policy. Issuer concentration and five-day liquidity are verified. And all return inputs are course trading values. What would change my call to adopt? Is that the committee approves a loss measure in limit.
+[2:42] Operations verifies liquidity in an issuer exposure, and dated forward-looking estimates replace the training values. My ask of the committee is to approve the pilot as a research process with no capital allocation and take on those three conditions. Thank you.

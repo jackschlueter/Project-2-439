@@ -10,7 +10,21 @@ Repository: https://github.com/jackschlueter/Project-2-439
 |---|---|---|---|---|
 | Video 1 | 439 project 2 Video 1 | 2:30 | https://youtu.be/70vq2xUNwTE | Pending |
 | Video 2 | 439 project 2 Video 2 | 3:35 | https://youtu.be/9S-74I0AMUI | Pending |
-| Video 3 | 439 project 2 Video 3 | 3:03 | https://youtu.be/LpSa7-WsUW0 | Pending |
+| Video 3 | 439 project 2 Video 3 | 3:03 | https://youtu.be/LpSa7-WsUW0 | [transcript-video-3.txt](https://github.com/jackschlueter/Project-2-439/blob/main/transcript-video-3.txt) |
+
+### Video 3 timestamps
+
+| Time | Section |
+|---|---|
+| 0:00 | AI announcement; education, not investment advice; app running live |
+| 0:28 | Decision tab: equal weight and 60/40 benchmark fail; constrained mix passes |
+| 0:57 | Live stress: equity estimate cut by one point |
+| 1:10 | Recommendation: PILOT, 0/20/25/55 research starting mix |
+| 1:25 | Why this mix |
+| 1:41 | Why not adopt: stress results and the 7.25% changed-input test |
+| 2:03 | Window and signal stresses; why not reject |
+| 2:21 | Risks and limitations; what would change the call |
+| 2:42 | Ask of the committee |
 
 Access: Videos 1, 2 and 3 are unlisted on YouTube and play without signing in (checked logged out on 2026-11-23).
 
@@ -50,5 +64,6 @@ Every file below is committed on `main` at https://github.com/jackschlueter/Proj
 | `records/lab20_pre_run_prediction.md` | AI-off prediction, locked in commit `723d43d` before the run | ✅ |
 | `records/lab20_run_result.md`, `records/lab20_baseline_output.txt`, `records/lab20_after_output.txt` | Changed-input run and outputs | ✅ |
 | `records/project2_cold_run_2026-11-17.md` | Partner cold run | ✅ |
-| `transcript-video-1.txt`, `transcript-video-2.txt`, `transcript-video-3.txt` | Video transcripts | Pending |
+| `transcript-video-3.txt` | Video 3 transcript | ✅ |
+| `transcript-video-1.txt`, `transcript-video-2.txt` | Video 1 and 2 transcripts | Pending |
 | `.env.example` | Not needed: the app uses no API keys or secrets | — |
