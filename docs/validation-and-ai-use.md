@@ -8,7 +8,28 @@ Run from the app folder after `pip install -r requirements.txt`:
 - `python -m unittest -v test_portfolio_engine.py test_lab13_mandate.py test_pit_signal.py` runs 9 known-answer tests, including the Lab 13 Meridian answer (0/20/25/55, 6.51%, 9.44%), the loss-limit verdicts, and the DGS10 vintage gate.
 - `records/project2_cold_run_2026-11-17.md` records clean-folder runs. A partner cold run from the GitHub clone is still pending.
 - `single_file/app.py` was rendered alone, with no other project files beside it, and matched the main app's figures.
-- **Lab 20 equity 7.25% test.** `records/lab20_pre_run_prediction.md` is Jack's AI-off prediction, written by Jack and committed to GitHub (commit `723d43d`, 2026-11-22 17:14:32 −0500) before the run. Claude Code then ran the 7.25% case with `search(target=.065, reserve_floor=.03, equity_adjustment=-.0075, loss_limit=.10)` and saved `records/lab20_baseline_output.txt` (before) and `records/lab20_after_output.txt` (after). `records/lab20_run_result.md` was assembled by Claude Code from those outputs, except the "Effect on the decision" paragraph, which Jack wrote. The result matched the prediction: the old mix fell to 6.10% and no mix passed (STOP); the decision stayed PILOT.
+- The changed-input test is in the Locked Changed-Input Record below.
+
+## Locked Changed-Input Record
+
+**Locked:** Jack's AI-off prediction, [`records/lab20_pre_run_prediction.md`](../records/lab20_pre_run_prediction.md), was committed and pushed to GitHub in commit `723d43d` (2026-11-22 17:14:32 −0500) before the run. Jack wrote it without AI; Claude Code only saved it verbatim and pushed it.
+
+**One changed input:** global equity's expected annual return, 8.00% → 7.25% (−0.75 pp). Everything else held fixed: other sleeve returns, all volatilities and correlations, 2.5% CPI, 4.0 pp spread, 0% costs, 6.5% return hurdle, 3% eligible reserve floor, long-only 5% grid, and the proposed 10% one-year loss limit (on).
+
+**Run:** after the prediction was on GitHub, Claude Code ran `search(target=.065, reserve_floor=.03, equity_adjustment=-.0075, loss_limit=.10)` from `lab13_mandate.py` and saved [`records/lab20_baseline_output.txt`](../records/lab20_baseline_output.txt) (before) and [`records/lab20_after_output.txt`](../records/lab20_after_output.txt) (after).
+
+| Case | Bills / 10-yr / IG / Equity | Return | Volatility | 95% loss | Verdict |
+|---|---|---:|---:|---:|---|
+| Baseline (equity 8.00%) | 0 / 20 / 25 / 55 | 6.51% | 9.44% | 9.02% | PASS |
+| Old mix at equity 7.25% | 0 / 20 / 25 / 55 | 6.10% | 9.44% | 9.43% | FAIL: return below 6.50% |
+| Re-optimized, loss limit on | No qualifying mix | — | — | — | FAIL → STOP |
+| Re-optimized, loss limit off (comparison) | 0 / 10 / 20 / 70 | 6.50% | 11.57% | 12.53% | FAIL: loss above 10% |
+
+**Prediction vs. result:** all four predictions held. The old mix fell about 0.41 pp to 6.10%; the optimizer needed more equity (70% without the loss limit); no mix met return, reserve, and loss rules together, so STOP triggered; the recommendation stayed PILOT. The prediction gave no number for the new volatility or loss.
+
+**Effect on the decision (Jack):** PILOT stands. The STOP shows the process catches an infeasible case instead of forcing an allocation, but it has little room for error in its return assumptions. Full write-up: [`records/lab20_run_result.md`](../records/lab20_run_result.md), assembled by Claude Code from the saved outputs except the "Effect on the decision" paragraph, which Jack wrote.
+
+**Earlier draft:** [`records/locked_changed_input_2026-11-17.md`](../records/locked_changed_input_2026-11-17.md) locked the same equity change on 2026-11-17 but predates the loss limit and was never run on its own. It is superseded by the record above.
 
 ## AI-use log
 
