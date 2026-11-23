@@ -6,7 +6,7 @@ Run from the app folder after `pip install -r requirements.txt`:
 
 - `python verify_project2.py` reproduces every figure behind the decision (baselines, verdicts, each stress, the signal case) and stops with an error if any saved number changes.
 - `python -m unittest -v test_portfolio_engine.py test_lab13_mandate.py test_pit_signal.py` runs 9 known-answer tests, including the Lab 13 Meridian answer (0/20/25/55, 6.51%, 9.44%), the loss-limit verdicts, and the DGS10 vintage gate.
-- `records/project2_cold_run_2026-11-17.md` records clean-folder runs. A partner cold run from the GitHub clone is still pending.
+- `records/project2_cold_run_2026-11-17.md` records clean-folder runs and the partner cold run from a fresh GitHub clone (2026-11-22, partner: OpenAI Codex, not a classmate). Run 1 reached PILOT with all 9 tests passing and the app running; it found one README gap (no `cd` step, and no mention of Streamlit's optional email prompt), fixed in commit `7cf29ec`. The rerun after the fix had no project-command failures.
 - `single_file/app.py` was rendered alone, with no other project files beside it, and matched the main app's figures.
 - The changed-input test is in the Locked Changed-Input Record below.
 
