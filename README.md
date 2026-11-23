@@ -14,6 +14,16 @@ Choices were adopt, allocate to, rebalance, pilot, or reject. The call is **pilo
 - **Why not adopt or allocate:** the mix clears the 6.5% hurdle by only 0.01 points. Under the proposed 10% loss limit, a one-point cut in the equity estimate **or** 0.50 points of extra cost leaves **no mix that passes**, so the stop condition fires under modest stress. The loss limit is the analyst's proposal, not yet committee policy. Issuer concentration and five-day liquidity are not verified. All return inputs are course training values.
 - **What would change the call to adopt:** the committee approves a loss measure and limit (or a lower return target), operations verifies liquidity and issuer exposure, and dated forward-looking estimates replace the training values.
 
+## Videos
+
+| Video | Length | Link |
+|---|---|---|
+| Video 1 | 2:30 | https://youtu.be/70vq2xUNwTE |
+| Video 2 | — | Not yet recorded |
+| Video 3 | — | Not yet recorded |
+
+The videos are unlisted and play without signing in. The full submission manifest is in [docs/submission-manifest.md](docs/submission-manifest.md).
+
 ## Reach the decision from this folder
 
 Use Python 3.12 or later. Get the code and move into its folder:
@@ -113,6 +123,7 @@ The bundled signal uses the exact **2026-10-31 ALFRED vintage**. Its latest nonm
 - `docs/decision-memo.md` — committee decision memo.
 - `single_file/` — `app.py` is the whole app in one file, with the data built in. Runs alone: `pip install numpy pandas streamlit`, then `python -m streamlit run app.py`. Regenerate after code changes with `python single_file/build.py`.
 - `docs/validation-and-ai-use.md` — validation checks and AI-use log.
+- `docs/submission-manifest.md` — Brightspace submission manifest: GitHub links for every location and YouTube links for the videos.
 - `records/` — partner cold-run record; Lab 20 pre-run prediction, baseline and after outputs, and run result; the superseded 2026-11-17 locked changed-input record; Edition A draft.
 - `reference/` — copies of the earlier Lab 13–15 work this app was built from. Not used by the app.
 - `requirements.txt` — Python dependencies.
