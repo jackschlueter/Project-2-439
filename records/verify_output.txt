@@ -1,5 +1,11 @@
 $ python verify_project2.py
-# Run 2026-11-23 at commit dde7b8e, Python 3.14.7, macOS
+# Run 2026-11-23 at commit 485880a, Python 3.14.7, macOS
+
+Inputs (Lab 13 course training values, not market estimates; sleeves bills/10-year/IG/equity):
+  Expected returns 3.50% / 4.30% / 5.00% / 8.00%; volatilities 0.50% / 7.00% / 6.00% / 16.00%
+  Correlations: 10-year/IG 0.80, IG/equity 0.25, 10-year/equity -0.10, bills/10-year 0.10
+  Mandate: 6.5% gross return hurdle (2.5% CPI + 4.0 pp); 3% eligible reserve floor (bills and 10-year only); proposed 10% 95% one-year loss limit; long-only 5% grid
+As of: DGS10 ALFRED vintage 2026-10-31 (signal stress); SGOV/BND/VT month-end prices Sep 2021-Sep 2026 (window stress)
 
 Equal weight: Treasury bills 25% / Treasury 10-year 25% / IG bonds 25% / Global equity 25%; return 5.20%; volatility 5.21%; 95% loss 3.38%; eligible reserve 50%; FAIL (Return proxy 5.20% below 6.50% gross hurdle)
 60/40 benchmark: Treasury bills 0% / Treasury 10-year 0% / IG bonds 40% / Global equity 60%; return 6.80%; volatility 10.46%; 95% loss 10.41%; eligible reserve 0%; FAIL (Eligible reserve 0% below 3% floor; 95% one-year loss 10.41% above 10% limit)
@@ -18,3 +24,5 @@ Signal: 10-year estimate = DGS10 4.98% (2026-10-29): (0.05, 0.4, 0.0, 0.55); ret
 Decision: PILOT the process; no allocation or trade authorization.
 Stop condition triggered: equity -1 pp and costs +0.50 pp each leave no mix meeting the return, reserve, and loss rules.
 Adoption gates: committee approves the loss limit; verify liquidity and issuer exposure; replace training estimates with dated forward estimates.
+Reject if: realistic validated assumptions repeatedly trigger the stop condition, or liquidity requirements cannot be met.
+Committee ask: approve the pilot as a research process with no capital allocation, and take on the three adoption gates.

@@ -1,5 +1,5 @@
 $ python -m unittest -v test_portfolio_engine.py test_lab13_mandate.py test_pit_signal.py
-# Run 2026-11-23 at commit dde7b8e, Python 3.14.7, macOS
+# Run 2026-11-23 at commit 485880a, Python 3.14.7, macOS
 
 test_mandate_scenarios (test_portfolio_engine.PortfolioKnownAnswers.test_mandate_scenarios) ... ok
 test_rebalance_requires_full_weight (test_portfolio_engine.PortfolioKnownAnswers.test_rebalance_requires_full_weight) ... ok
@@ -12,6 +12,6 @@ test_earlier_vintage_excludes_later_observations (test_pit_signal.DGS10SnapshotT
 test_reject_wrong_vintage_or_future_observation (test_pit_signal.DGS10SnapshotTests.test_reject_wrong_vintage_or_future_observation) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 0.051s
+Ran 9 tests in 0.050s
 
 OK

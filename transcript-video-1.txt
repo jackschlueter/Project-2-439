@@ -1,16 +1,16 @@
 439 project 2 Video 1 — how my system and thinking changed, and one AI output I checked (2:30)
 https://youtu.be/70vq2xUNwTE
-Speaker: Jack Schlueter. Auto-generated transcript, unedited.
+Speaker: Jack Schlueter. Auto-generated captions, corrected for finance terms, tool names, and numbers; filler left as spoken. [Brackets] mark editorial notes.
 
 [0:00] OK, so.
-[0:20] I used claude code to get my AI disclosure. I used clogged code, open at Codex, and Chat GPT to help build and document this project, including...
-[0:29] Different codes and tests.
-[0:31] The analysis and decisions are mine. This is education, not investment advice. So this video covers how my system changed and one AI output I checked. So I started project 2 with a young family client in my own return hurdle. I switched to the Lab 13 Meridian Foundation Reserve Mandate because that's the case the committee actually cares about.
-[0:51] And 2 things really change our thinking along the way. First, the IPS mentions a 10% loss limit, but never defines the measures or what happens on a breach. I proposed one, 95% one-year loss equals 1.65 times volatility, might expect to return. It's my proposal, not committee policy.
-[1:10] the apple to turn it off.
-[1:12] Second, my window stress originally just said there was an evidence gap. I replaced it with ETS stands in, stand ins, excuse me, which would be SGOV, BND, and VT. So the stress produces a real number. I also fed the point in time DGS 10 yield into the stress run. Now for the AI output.
+[0:20] [Unclear] my AI disclosure. I used Claude Code, OpenAI Codex, and ChatGPT to help build and document this project, including...
+[0:29] the code and tests.
+[0:31] The analysis and decisions are mine. This is education, not investment advice. So this video covers how my system changed and one AI output I checked. So I started Project 2 with a young-family client and my own return hurdle. I switched to the Lab 13 Meridian Foundation Reserve mandate because that's the case the committee actually cares about.
+[0:51] And two things really changed my thinking along the way. First, the IPS mentions a 10% loss limit, but never defines the measure or what happens on a breach. I proposed one: 95% one-year loss equals 1.645 times volatility minus expected return. It's my proposal, not committee policy.
+[1:10] The app lets you turn it off.
+[1:12] Second, my window stress originally just said there was an evidence gap. I replaced it with ETF stand-ins, which are SGOV, BND, and VT, so the stress produces a real number. I also fed the point-in-time DGS10 yield into the stress run. Now for the AI output
 [1:35] I checked.
-[1:37] Claude Code implemented the loss measure and reported that my chosen portfolio of 0% bills, 20% 10-year, 25% investment grade bonds, and 55% equity had a 9.02% loss. I didn't just accept that. So we have volatility here.
-[1:53] at 9.44 percent, 1.654 times 9.44 is about 15.53. Subtract the expected return of 6.51 and I get 9.02. It matches and I accept the number, but I also noted the limitation. The measure assumes normal returns, so it understates fat tail losses.
-[2:14] It was a screen, not a guarantee.
+[1:37] Claude Code implemented the loss measure and reported that my chosen portfolio of 0% bills, 20% 10-year, 25% investment-grade bonds, and 55% equity had a 9.02% loss. I didn't just accept that. So we have volatility here
+[1:53] at 9.44%. 1.645 [spoken as "1.654"] times 9.44 is about 15.53. Subtract the expected return of 6.51 and I get 9.02. It matches and I accept the number, but I also noted the limitation. The measure assumes normal returns, so it understates fat-tail losses.
+[2:14] It's a screen, not a guarantee.
 [2:19] And that's how my system and my thinking changed. Thank you.
