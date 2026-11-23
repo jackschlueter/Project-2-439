@@ -9,10 +9,10 @@ Repository: https://github.com/jackschlueter/Project-2-439
 | Video | Title | Length | Link | Transcript |
 |---|---|---|---|---|
 | Video 1 | 439 project 2 Video 1 | 2:30 | https://youtu.be/70vq2xUNwTE | Pending |
-| Video 2 | Not yet recorded | — | — | — |
+| Video 2 | 439 project 2 Video 2 | 3:35 | https://youtu.be/9S-74I0AMUI | Pending |
 | Video 3 | Not yet recorded | — | — | — |
 
-Access: Video 1 is unlisted on YouTube and plays without signing in (checked logged out on 2026-11-23).
+Access: Videos 1 and 2 are unlisted on YouTube and play without signing in (checked logged out on 2026-11-23).
 
 ## App and evidence
 

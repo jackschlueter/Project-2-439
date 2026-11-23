@@ -19,7 +19,7 @@ Choices were adopt, allocate to, rebalance, pilot, or reject. The call is **pilo
 | Video | Length | Link |
 |---|---|---|
 | Video 1 | 2:30 | https://youtu.be/70vq2xUNwTE |
-| Video 2 | — | Not yet recorded |
+| Video 2 | 3:35 | https://youtu.be/9S-74I0AMUI |
 | Video 3 | — | Not yet recorded |
 
 The videos are unlisted and play without signing in. The full submission manifest is in [docs/submission-manifest.md](docs/submission-manifest.md).
