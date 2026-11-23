@@ -1,5 +1,7 @@
 # Project 2 repository-only cold run — 2026-11-17
 
+> **Current record:** the section "Partner cold run — 2026-11-22 (partner: OpenAI Codex)" at the bottom is the current cold-run record; everything above it is the superseded 2026-11-17 young-family audit.
+
 ## Prediction before running
 
 The local Project 2 commit `6760bd0` tracks the site bundle, mandate note, and a locked Meridian input record, but not the README, Python model, tests, bundled price panel, or raw price responses. A stranger checking out that commit should be able to read the pilot call in the site, but cannot reproduce its numeric evidence using the Python instructions because those instructions and inputs are absent. The local Git repository has no GitHub remote, so a GitHub-only proof is not yet possible.
