@@ -8,9 +8,20 @@ Repository: https://github.com/jackschlueter/Project-2-439
 
 | Video | Title | Length | Link | Transcript |
 |---|---|---|---|---|
-| Video 1 | 439 project 2 Video 1 | 2:30 | https://youtu.be/70vq2xUNwTE | Pending |
+| Video 1 | 439 project 2 Video 1 | 2:30 | https://youtu.be/70vq2xUNwTE | [transcript-video-1.txt](https://github.com/jackschlueter/Project-2-439/blob/main/transcript-video-1.txt) |
 | Video 2 | 439 project 2 Video 2 | 3:35 | https://youtu.be/9S-74I0AMUI | [transcript-video-2.txt](https://github.com/jackschlueter/Project-2-439/blob/main/transcript-video-2.txt) |
 | Video 3 | 439 project 2 Video 3 | 3:03 | https://youtu.be/LpSa7-WsUW0 | [transcript-video-3.txt](https://github.com/jackschlueter/Project-2-439/blob/main/transcript-video-3.txt) |
+
+### Video 1 timestamps
+
+| Time | Section |
+|---|---|
+| 0:20 | AI announcement; education, not investment advice |
+| 0:31 | How the system changed: young-family draft → Lab 13 Meridian mandate |
+| 0:51 | Change 1: defining the 10% loss limit (95% one-year loss) |
+| 1:12 | Change 2: window stress with ETF stand-ins; DGS10 signal |
+| 1:37 | AI output checked: the 9.02% loss, recomputed by hand |
+| 2:19 | Close |
 
 ### Video 2 timestamps
 
@@ -77,6 +88,5 @@ Every file below is committed on `main` at https://github.com/jackschlueter/Proj
 | `records/lab20_pre_run_prediction.md` | AI-off prediction, locked in commit `723d43d` before the run | ✅ |
 | `records/lab20_run_result.md`, `records/lab20_baseline_output.txt`, `records/lab20_after_output.txt` | Changed-input run and outputs | ✅ |
 | `records/project2_cold_run_2026-11-17.md` | Partner cold run | ✅ |
-| `transcript-video-2.txt`, `transcript-video-3.txt` | Video 2 and 3 transcripts | ✅ |
-| `transcript-video-1.txt` | Video 1 transcript | Pending |
+| `transcript-video-1.txt`, `transcript-video-2.txt`, `transcript-video-3.txt` | Video transcripts | ✅ |
 | `.env.example` | Not needed: the app uses no API keys or secrets | — |
